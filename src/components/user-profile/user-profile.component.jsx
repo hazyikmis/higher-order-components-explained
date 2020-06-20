@@ -15,5 +15,5 @@ const UserProfile = ({ data, name, email }) => (
     ))}
   </div>
 );
-
+//export default withData(UserProfile, 'https://jsonplaceholder.typicode.com/posts');  //means withData(wrappedComponent, dataSource)
 export default withData(UserProfile);

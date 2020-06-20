@@ -1,7 +1,10 @@
 import React from 'react';
 
+//const withData = (WrappedComponent, dataSource) => {
+  //if we exported userList & userProfile components like> export default withData(UserList, 'https://jsonplaceholder.typicode.com/users')
+  //then the above declaration might be correct
 const withData = WrappedComponent => {
-  class WithData extends React.Component {
+    class WithData extends React.Component {
     constructor(props) {
       super(props);
 
@@ -11,6 +14,8 @@ const withData = WrappedComponent => {
     }
 
     componentDidMount() {
+      //intentionally to show "LOADING" text on the screen!
+      //2 LOADINGs because, 2 components try to load themselves
       setTimeout(() => {
         fetch(this.props.dataSource)
           .then(response => response.json())

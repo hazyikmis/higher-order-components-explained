@@ -19,3 +19,11 @@ After forking the project, simply clone it the way you would from the new forked
 ## Install dependencies
 
 In your terminal after you clone your project down, remember to run either `yarn` or `npm install` to build all the dependencies in the project.
+
+
+## EXPLANATION OF WHAT WE ARE DOING HERE:
+Both of the components, UserList & UserProfile, fetches some data from some url and shows/renders some of these data.
+The problem is, both of them, in their componentDidMount lifecyle methods executes nearly same code.
+What we can do is, extract the fetching data functionality from this components, put this functionality in a higher order component (with-data.js).
+Then wrap these 2 components with this hoc. And convert these 2 class component to function components.
+This hoc accepts a component and returns another component with augmented props (data).
